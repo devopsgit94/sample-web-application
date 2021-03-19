@@ -44,10 +44,10 @@ pipeline{
               steps{
                   script{
 		  sh 'cp -r ../jenkins-dockerdeploy@2/target .'
-                  sh 'docker build . -t deekshithsn/devops-training:$Docker_tag'
+                  sh 'docker build . -t srinidocker94/devops-training:$Docker_tag'
 		  withCredentials([string(credentialsId: 'docker_password', variable: 'docker_password')]) {			    
 				  sh 'docker login -u srinidocker94 -p $docker_password'
-				  sh 'docker push deekshithsn/devops-training:$Docker_tag'
+				  sh 'docker push srinidocker94/devops-training:$Docker_tag'
 			}
                        }
                     }
